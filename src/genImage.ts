@@ -1,6 +1,6 @@
 export default function genImage(title: string, date: string, author: string) {
   return `
-    <svg style="background: #41fd84" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+    <svg style="background: #41fd84" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
       <style>
         @import url('/static/fonts/fonts.css');
         :root {
@@ -54,7 +54,7 @@ export default function genImage(title: string, date: string, author: string) {
         <tspan x="100" y="85%" font-size="2em">Postado em ${date}</tspan>
       </text>
     
-      <image xmlns="http://www.w3.org/2000/svg" href="/static/me.jpeg" x="72%" y="20.5%" width="210" height="210" filter="url(#grayscale)" clip-path="url(#avatar-circle)"/>
+      <image xmlns="http://www.w3.org/2000/svg" href="/static/me.jpeg" x="72%" y="19.7%" width="200" height="200" filter="url(#grayscale)" clip-path="url(#avatar-circle)"/>
     </svg>
   `;
 }
