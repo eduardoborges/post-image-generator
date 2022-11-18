@@ -1,9 +1,9 @@
 name: Deploy
 
 on:
+  workflow_dispatch:
   push:
     branches: ["main"]
-  workflow_dispatch:
 
 concurrency:
   group: "post-image-generator"
@@ -13,7 +13,6 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    needs: build
     env:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CF_TOKEN }}
     steps:
@@ -22,8 +21,3 @@ jobs:
       - run: |
           npm install -g wrangler 
           npx wrangler publish
-
-
-
-  
-  
