@@ -1,0 +1,7 @@
+name = "post-image-generator"
+main = "src/index.ts"
+workers_dev = true
+compatibility_date = "2022-11-18"
+
+[site]
+bucket = "./assets"
