@@ -16,10 +16,11 @@ app.get('/', (c) => {
 
   const image = genImage(title, date, author);
 
-  c.header('Content-Type', 'image/svg+xml');
-  c.header('Cache-Control', 'public, max-age=86400');
+  const blob = `data:image/svg+xml;base64,${btoa(image)}`;
 
-  return c.body(image);
+  c.header('Content-Type', 'image/png');
+  c.header('Cache-Control', 'public, max-age=31536000, immutable');
+  return c.body(blob);
 });
 
 app.use('/static/*', serveStatic({ root: './static/*' }));
